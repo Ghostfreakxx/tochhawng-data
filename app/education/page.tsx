@@ -10,7 +10,7 @@ export default function EducationPage() {
           {[
             ["Literacy Rate", "91.3%", "One of India’s highest"],
             ["Higher Education", "Growing", "Colleges and universities"],
-            ["Status", "Demo", "Awaiting verified education data"],
+            ["Budget Allocation", "₹2,374 Cr", "Education, Sports, Arts and Culture, 2024–25"],
           ].map(([title, value, note]) => (
             <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6" key={title}>
               <h2 className="text-xl font-semibold">{title}</h2>
