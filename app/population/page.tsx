@@ -10,7 +10,7 @@ export default function PopulationPage() {
           {[
             ["Population", "12.5 lakh", "Estimated population"],
             ["Districts", "11", "Administrative districts"],
-            ["Capital", "Aizawl", "Largest urban centre"],
+            ["Urban Growth", "52%", "People living in urban areas"],
           ].map(([title, value, note]) => (
             <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6" key={title}>
               <h2 className="text-xl font-semibold">{title}</h2>
