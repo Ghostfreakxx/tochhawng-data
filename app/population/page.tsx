@@ -1,3 +1,5 @@
+import DataChart from "../components/DataChart";
+
 export default function PopulationPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
@@ -20,6 +22,14 @@ export default function PopulationPage() {
           ))}
         </div>
       </div>
-    </main>
+    <DataChart
+  title="Population Growth Trend"
+  data={[
+    { year: "2001", value: 8.9 },
+    { year: "2011", value: 10.9 },
+    { year: "2024", value: 12.5 },
+  ]}
+/>
+</main>
   );
 }
