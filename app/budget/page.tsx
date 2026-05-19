@@ -1,31 +1,9 @@
-"use client";
-
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from "recharts";
-
-const budgetData = [
-  { department: "Education", amount: 2031 },
-  { department: "PWD & Infrastructure", amount: 1580 },
-  { department: "Health & Family Welfare", amount: 1245 },
-  { department: "Rural Development", amount: 1120 },
-  { department: "Police", amount: 890 },
-];
-
-const COLORS = ["#22c55e", "#38bdf8", "#f97316", "#a855f7", "#ef4444"];
+import DataChart from "../components/DataChart";
 
 export default function BudgetPage() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-10">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-black text-white p-8">
+      <div className="max-w-6xl mx-auto">
         <a href="/" className="text-gray-400 text-sm">
           ← Back to Overview
         </a>
@@ -35,81 +13,57 @@ export default function BudgetPage() {
         </h1>
 
         <p className="text-gray-400 mb-10">
-          Public finance overview of Mizoram government departments. Demo figures for layout testing.
+          Public finance overview of Mizoram government departments.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <p className="text-gray-400 text-sm">Tracked Departments</p>
-            <h2 className="text-4xl font-bold mt-3">5</h2>
+            <h2 className="text-xl font-semibold">Total Budget</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹14,412 Cr</p>
+            <p className="text-gray-500 mt-2">Mizoram Budget 2024–25</p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <p className="text-gray-400 text-sm">Total Shown</p>
-            <h2 className="text-4xl font-bold mt-3">₹6,866 Cr</h2>
+            <h2 className="text-xl font-semibold">Education</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹2,374 Cr</p>
+            <p className="text-gray-500 mt-2">Education, Sports, Arts and Culture</p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <p className="text-gray-400 text-sm">Status</p>
-            <h2 className="text-4xl font-bold mt-3">Demo</h2>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-2xl font-bold mb-6">Department Allocation</h2>
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={budgetData}>
-                  <XAxis dataKey="department" tick={{ fill: "#a1a1aa", fontSize: 11 }} />
-                  <YAxis tick={{ fill: "#a1a1aa", fontSize: 12 }} />
-                  <Tooltip />
-                  <Bar dataKey="amount" fill="#22c55e" radius={[8, 8, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+            <h2 className="text-xl font-semibold">Health</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹840 Cr</p>
+            <p className="text-gray-500 mt-2">Health and Family Welfare</p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-2xl font-bold mb-6">Budget Share</h2>
-            <div className="h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={budgetData}
-                    dataKey="amount"
-                    nameKey="department"
-                    outerRadius={110}
-                    label
-                  >
-                    {budgetData.map((entry, index) => (
-                      <Cell key={entry.department} fill={COLORS[index]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
+            <h2 className="text-xl font-semibold">Agriculture</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹727 Cr</p>
+            <p className="text-gray-500 mt-2">Agriculture and allied sector</p>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">Police</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹726 Cr</p>
+            <p className="text-gray-500 mt-2">Police and internal security</p>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">Roads & Bridges</h2>
+            <p className="text-4xl font-bold mt-4 text-green-400">₹645 Cr</p>
+            <p className="text-gray-500 mt-2">Road infrastructure</p>
           </div>
         </div>
 
-        <div className="grid gap-5">
-          {budgetData.map((item) => (
-            <div
-              key={item.department}
-              className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex justify-between items-center"
-            >
-              <h2 className="text-2xl font-semibold">{item.department}</h2>
-              <div className="text-3xl font-bold text-green-400">
-                ₹{item.amount} Cr
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-gray-500 text-sm mt-8">
-          Note: These are placeholder figures until verified data from official Mizoram budget documents is added.
-        </p>
+        <DataChart
+          title="Selected Department Budget Allocation"
+          data={[
+            { year: "Education", value: 2374 },
+            { year: "Health", value: 840 },
+            { year: "Agriculture", value: 727 },
+            { year: "Police", value: 726 },
+            { year: "Roads", value: 645 },
+          ]}
+        />
       </div>
     </main>
   );
