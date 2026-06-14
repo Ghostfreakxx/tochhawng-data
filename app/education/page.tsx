@@ -14,7 +14,7 @@ export default function EducationPage() {
         </h1>
 
         <p className="text-gray-400 mb-10">
-          Literacy, schools, colleges, and education indicators.
+          Literacy, schools, colleges, universities, and educational development indicators.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -29,7 +29,7 @@ export default function EducationPage() {
             </p>
 
             <p className="text-gray-500 mt-2">
-              One of India’s highest
+              Among the highest literacy rates in India
             </p>
           </div>
 
@@ -39,11 +39,11 @@ export default function EducationPage() {
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              Growing
+              MZU
             </p>
 
             <p className="text-gray-500 mt-2">
-              Colleges and universities
+              Mizoram University leads higher education in the state
             </p>
           </div>
 
@@ -57,20 +57,69 @@ export default function EducationPage() {
             </p>
 
             <p className="text-gray-500 mt-2">
-              Education, Sports, Arts and Culture
+              Education, Sports, Arts and Culture sector
             </p>
           </div>
 
         </div>
 
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Education Overview
+          </h2>
+
+          <p className="text-gray-400 leading-7">
+            Mizoram has consistently maintained one of the highest literacy
+            rates in India. The education sector is supported by a wide network
+            of government and private schools, colleges, technical institutions,
+            and universities. Continued investment in education remains a key
+            component of the state's social development strategy.
+          </p>
+        </div>
+
         <DataChart
-          title="Literacy Growth"
+          title="Literacy Growth (%)"
           data={[
             { year: "2001", value: 88.5 },
             { year: "2011", value: 91.3 },
             { year: "2024", value: 93.2 },
           ]}
         />
+
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Major Institutions
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+            <p>• Mizoram University (MZU)</p>
+            <p>• ICFAI University Mizoram</p>
+            <p>• Pachhunga University College (PUC)</p>
+            <p>• Government Colleges across districts</p>
+            <p>• Technical and Vocational Institutions</p>
+            <p>• Teacher Education and Training Centres</p>
+          </div>
+        </div>
+
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Key Challenges
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+            <p>• Graduate unemployment</p>
+            <p>• Rural school infrastructure gaps</p>
+            <p>• Digital learning access</p>
+            <p>• Skill development and employability</p>
+            <p>• Research and innovation capacity</p>
+            <p>• Competitive examination preparation support</p>
+          </div>
+        </div>
+
+        <p className="text-gray-600 text-sm mt-8">
+          Sources: Census of India, Mizoram Education Department,
+          Mizoram Budget Documents, UGC and institutional publications.
+        </p>
 
       </div>
     </main>
