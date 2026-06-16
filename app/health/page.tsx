@@ -27,16 +27,16 @@ export default function HealthPage() {
           />
 
           <DashboardCard
-            title="Life Expectancy"
-            value="74 Years"
-            note="Estimated average lifespan"
-          />
+  title="MUHCS Families"
+  value="49,278"
+  note="Families enrolled under MUHCS 2.0"
+/>
 
-          <DashboardCard
-            title="Healthcare Focus"
-            value="Public Health"
-            note="Healthcare access and service delivery"
-          />
+<DashboardCard
+  title="Healthcare Assistance"
+  value="₹22.74 Cr"
+  note="Healthcare assistance disbursed so far"
+/>
 
         </div>
 
@@ -46,11 +46,13 @@ export default function HealthPage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram has achieved relatively strong health outcomes compared
-            with many parts of India. Improvements in healthcare access,
-            immunization, maternal care, and disease prevention programmes
-            have contributed to better public health indicators across the state.
-          </p>
+  Mizoram's healthcare system is supported by public hospitals,
+  district health facilities, community health centres, and the
+  Mizoram Universal Healthcare Scheme (MUHCS). Under MUHCS 2.0,
+  a total of 49,278 families have enrolled and ₹22.74 crore has
+  been disbursed as healthcare assistance, expanding access to
+  cashless treatment across the state.
+</p>
         </div>
 
         <HealthChart />
@@ -67,6 +69,8 @@ export default function HealthPage() {
             <p>• Community Health Centres</p>
             <p>• Primary Health Centres</p>
             <p>• Sub-Centres and Rural Clinics</p>
+<p>• Blood Bank and Emergency Services</p>
+<p>• MRI, CT Scan and Diagnostic Facilities</p>
           </div>
         </div>
 
@@ -86,8 +90,9 @@ export default function HealthPage() {
         </div>
 
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Health and Family Welfare Department, Mizoram Budget Documents,
-          National Health Mission reports, and public health publications.
+          Sources: Health and Family Welfare Department Mizoram,
+MUHCS 2.0 public updates, Civil Hospital Aizawl notices,
+National Health Mission reports, and Mizoram Budget Documents.
         </p>
 
       </div>
