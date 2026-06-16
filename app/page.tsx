@@ -29,6 +29,11 @@ const stats = [
     value: "Governance",
     note: "Data, development, and public policy",
   },
+{
+  name: "Rural Development",
+  href: "/rural",
+  description: "MGNREGS, village infrastructure, livelihood, and rural development.",
+},
 ];
 
 const sections = [
