@@ -21,16 +21,16 @@ export default function CrimePage() {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Main Concern
-            </h2>
+  Drug Seizure Value
+</h2>
 
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              Drugs
-            </p>
+<p className="text-4xl font-bold mt-4 text-green-400">
+  ₹318.19 Cr
+</p>
 
-            <p className="text-gray-500 mt-2">
-              Narcotics, trafficking, and youth vulnerability
-            </p>
+<p className="text-gray-500 mt-2">
+  Drugs Against War initiative (2023–2025)
+</p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
@@ -69,12 +69,13 @@ export default function CrimePage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram faces a complex public safety environment shaped by drug
-            trafficking, cross-border movement, online fraud, financial scams,
-            and cyber hygiene gaps among citizens. Digital crime is becoming a
-            growing concern as mobile banking, online payments, and social media
-            use continue to expand.
-          </p>
+  Mizoram's public safety environment includes challenges related to
+  narcotics trafficking, cybercrime, cross-border smuggling, illegal
+  arms movement, and public security. Between 2023 and 2025, the Home
+  Department reported 517 drug cases, 573 arrests, illegal arms seizures,
+  forensic investigations, and continued modernization of police, fire,
+  and correctional services.
+</p>
         </div>
 
         <DataChart
@@ -104,10 +105,28 @@ export default function CrimePage() {
             <p>• Need for cyber hygiene awareness</p>
           </div>
         </div>
+<div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+  <h2 className="text-2xl font-bold mb-4">
+    Home Department Highlights (2023–2025)
+  </h2>
 
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+    <p>• Drug Cases Registered: 517</p>
+    <p>• Drug Arrests: 573</p>
+    <p>• Drug Seizure Value: ₹318.19 Crore</p>
+    <p>• Illegal Weapons Seized: 54</p>
+    <p>• Ammunition Recovered: 28,005</p>
+    <p>• Arms Related Cases: 46</p>
+    <p>• Forensic Samples Tested: 15,662</p>
+    <p>• Fingerprints Recorded: 10,265</p>
+    <p>• Fire Service Modernisation: ₹40 Crore</p>
+    <p>• Jail Infrastructure Investment: ₹55 Crore</p>
+  </div>
+</div>
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Mizoram Police cybercrime data used in research dataset,
-          NCRB reports, Mizoram Budget documents, and public safety reports.
+          Sources: Mizoram Police cybercrime research dataset, Home Department
+performance reports (2023–2025), NCRB reports, Mizoram Budget
+documents, and public safety publications.
         </p>
 
       </div>
