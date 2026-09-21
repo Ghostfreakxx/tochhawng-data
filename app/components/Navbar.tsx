@@ -7,6 +7,10 @@ const links = [
   { name: "Elections", href: "/elections" },
   { name: "Crime", href: "/crime" },
   { name: "Roads", href: "/roads" },
+  { name: "Agriculture", href: "/agriculture" },
+  { name: "Employment", href: "/employment" },
+  { name: "Rural", href: "/rural" },
+  { name: "Glossary", href: "/glossary" },
 ];
 
 export default function Navbar() {
