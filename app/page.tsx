@@ -11,8 +11,8 @@ const stats = [
   },
   {
     title: "State Budget",
-    value: "₹14,412 Cr",
-    note: "Budget Estimate 2024–25",
+    value: "₹17,469.91 Cr",
+    note: "Budget Estimate 2026–27",
   },
   {
     title: "Capital",
@@ -29,11 +29,6 @@ const stats = [
     value: "Governance",
     note: "Data, development, and public policy",
   },
-{
-  name: "Rural Development",
-  href: "/rural",
-  description: "MGNREGS, village infrastructure, livelihood, and rural development.",
-},
 ];
 
 const sections = [
@@ -41,6 +36,11 @@ const sections = [
     name: "Budget & Finance",
     href: "/budget",
     description: "Government expenditure, allocations, and public finance.",
+  },
+  {
+    name: "Rural Development",
+    href: "/rural",
+    description: "MGNREGS, village infrastructure, livelihood, and rural development.",
   },
   {
     name: "Population",

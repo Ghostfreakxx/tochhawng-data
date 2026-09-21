@@ -24,81 +24,109 @@ export default function BudgetPage() {
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹14,412 Cr
+              ₹17,469.91 Cr
             </p>
 
             <p className="text-gray-500 mt-2">
-              Budget Estimate 2024–25
+              Total receipts, Budget Estimate 2026–27
             </p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Education Sector
+              Total Expenditure
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹2,374 Cr
+              ₹17,076.92 Cr
             </p>
 
             <p className="text-gray-500 mt-2">
-              Largest social sector allocation
+              Budget Estimate 2026–27
             </p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Health Sector
+              Capital Expenditure
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹840 Cr
+              ₹2,982.44 Cr
             </p>
 
             <p className="text-gray-500 mt-2">
-              Health and Family Welfare
+              +12.18% over 2025–26
             </p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Agriculture
+              Revenue Expenditure
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹727 Cr
+              ₹14,094.47 Cr
             </p>
 
             <p className="text-gray-500 mt-2">
-              Agriculture and allied activities
+              +13.18% over 2025–26
             </p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Police & Security
+              Fiscal Deficit
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹726 Cr
+              3.8% of GSDP
             </p>
 
             <p className="text-gray-500 mt-2">
-              Internal security and policing
+              ₹1,669 Cr — down from 7.6% (RE 2025–26)
             </p>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Roads & Bridges
+              Revenue Balance
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹645 Cr
+              Surplus 2.1% of GSDP
             </p>
 
             <p className="text-gray-500 mt-2">
-              Transport infrastructure
+              ₹900 Cr — vs a deficit in RE 2025–26
+            </p>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">
+              Gross State Domestic Product
+            </h2>
+
+            <p className="text-4xl font-bold mt-4 text-green-400">
+              ₹43,817 Cr
+            </p>
+
+            <p className="text-gray-500 mt-2">
+              Projected 2026–27, 11% growth
+            </p>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">
+              Central Tax Devolution
+            </h2>
+
+            <p className="text-4xl font-bold mt-4 text-green-400">
+              ₹8,608.08 Cr
+            </p>
+
+            <p className="text-gray-500 mt-2">
+              Share of Union tax transfers, 2026–27
             </p>
           </div>
 
@@ -110,24 +138,62 @@ export default function BudgetPage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram's budget prioritizes education, healthcare,
-            infrastructure, agriculture, rural development, and public
-            administration. The state remains significantly dependent on
-            transfers from the Union Government while gradually expanding
-            investment in development and social welfare programmes.
+            Chief Minister Lalduhoma, who also holds the Finance portfolio,
+            presented a ₹17,469.91 crore budget for 2026–27 — his third
+            since the Zoram People's Movement (ZPM) took office in December
+            2023 — with no new taxes proposed. The budget prioritizes
+            agriculture, healthcare, an anti-narcotics drive, social
+            infrastructure, and connectivity, while continuing Mizoram's
+            reliance on transfers from the Union Government alongside a
+            planned improvement in the state's fiscal position: the fiscal
+            deficit is targeted to narrow to 3.8% of GSDP from 7.6% in the
+            2025–26 revised estimate, with the state moving back to a
+            revenue surplus.
           </p>
         </div>
 
         <DataChart
-          title="Major Department Allocation (₹ Crore)"
+          title="Total Budget Outlay, 3-Year Trend (₹ Crore)"
           data={[
-            { year: "Education", value: 2374 },
-            { year: "Health", value: 840 },
-            { year: "Agriculture", value: 727 },
-            { year: "Police", value: 726 },
-            { year: "Roads", value: 645 },
+            { year: "2024–25 (BE)", value: 14412 },
+            { year: "2025–26 (BE)", value: 15198 },
+            { year: "2026–27 (BE)", value: 17469.91 },
           ]}
         />
+
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Sector-wise Expenditure Share, 2026–27
+          </h2>
+
+          <p className="text-gray-500 text-sm mb-4">
+            Share of total expenditure, as estimated by PRS Legislative
+            Research from the budget documents.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+            <p>• Rural Development — 7.9% (≈ ₹1,318 Cr)</p>
+            <p>• Police — 4.7% (≈ ₹784 Cr)</p>
+            <p>• Roads & Bridges — 2.0% (≈ ₹334 Cr)</p>
+          </div>
+        </div>
+
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
+            Key Scheme Allocations, 2026–27
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+            <p>• Bana Kaih farmer support scheme — ₹350 Cr</p>
+            <p>• Procurement of designated key crops — ₹150 Cr</p>
+            <p>• Mizoram Universal Health Care Scheme (bill settlement) — ₹130 Cr</p>
+            <p>• Road maintenance and connectivity — ₹183.25 Cr</p>
+            <p>• MLA Local Area Development Fund (40 MLAs) — ₹80 Cr</p>
+            <p>• Road Fund Board — ₹40 Cr</p>
+            <p>• De-addiction and rehabilitation centres — ₹0.70 Cr</p>
+            <p>• Supplementary demands for grants, 2025–26 — ₹3,724.25 Cr</p>
+          </div>
+        </div>
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
           <h2 className="text-2xl font-bold mb-4">
@@ -135,18 +201,24 @@ export default function BudgetPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
-            <p>• Education and human resource development</p>
-            <p>• Healthcare and public welfare</p>
-            <p>• Rural livelihood and agriculture</p>
-            <p>• Roads, bridges, and connectivity</p>
-            <p>• Public administration and governance</p>
-            <p>• Internal security and law enforcement</p>
+            <p>• Agriculture and farmer livelihoods (Bana Kaih)</p>
+            <p>• Healthcare and the anti-narcotics drive</p>
+            <p>• Social infrastructure and connectivity</p>
+            <p>• Rural development and roads</p>
+            <p>• Fiscal consolidation and a return to revenue surplus</p>
+            <p>• Public administration and internal security</p>
           </div>
         </div>
 
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Mizoram Budget Documents, Finance Department Mizoram,
-          PRS Legislative Research.
+          Sources: Mizoram Budget Speech 2026–27 (Mizoram Legislative
+          Assembly / DIPR Mizoram), Mizoram Finance Department budget
+          documents, PRS Legislative Research — Mizoram Budget Analysis
+          2026–27, and contemporaneous reporting (Outlook India, India
+          Today NE, Free Press Journal), as of the budget presented on
+          26 February 2026. Departmental totals not yet published in
+          accessible form are shown as scheme-level allocations rather
+          than estimated.
         </p>
       </div>
     </main>
