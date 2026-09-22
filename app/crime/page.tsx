@@ -1,4 +1,5 @@
 import DataChart from "../components/DataChart";
+import Term from "../components/Term";
 
 export default function CrimePage() {
   return (
@@ -61,6 +62,26 @@ export default function CrimePage() {
             </p>
           </div>
 
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">
+              Crime Rate
+            </h2>
+
+            <p className="text-4xl font-bold mt-4 text-green-400">
+              336 / lakh
+            </p>
+
+            <p className="text-gray-500 mt-2">
+              NCRB 2022 — below the national rate of 422 per lakh
+            </p>
+
+            <Term>
+              Crime rate counts reported crimes per 1,00,000 (1 lakh) people,
+              which makes it easier to compare places with different
+              population sizes than raw crime counts would.
+            </Term>
+          </div>
+
         </div>
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
@@ -69,12 +90,15 @@ export default function CrimePage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-  Mizoram's public safety environment includes challenges related to
+  Mizoram&apos;s public safety environment includes challenges related to
   narcotics trafficking, cybercrime, cross-border smuggling, illegal
   arms movement, and public security. Between 2023 and 2025, the Home
   Department reported 517 drug cases, 573 arrests, illegal arms seizures,
   forensic investigations, and continued modernization of police, fire,
-  and correctional services.
+  and correctional services. On NCRB&apos;s Crime in India 2022 report,
+  Mizoram&apos;s overall crime rate (336 per lakh population) was below
+  the national average (422 per lakh), and the state was among the five
+  with the fewest murder cases that year (31 in total).
 </p>
         </div>
 
@@ -125,8 +149,9 @@ export default function CrimePage() {
 </div>
         <p className="text-gray-600 text-sm mt-8">
           Sources: Mizoram Police cybercrime research dataset, Home Department
-performance reports (2023–2025), NCRB reports, Mizoram Budget
-documents, and public safety publications.
+performance reports (2023–2025), National Crime Records Bureau — Crime
+in India 2022 report, Mizoram Budget documents, and public safety
+publications.
         </p>
 
       </div>

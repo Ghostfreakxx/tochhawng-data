@@ -1,3 +1,5 @@
+import Term from "../components/Term";
+
 export default function RuralPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
@@ -47,16 +49,42 @@ export default function RuralPage() {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Core Focus
+              MGNREGS Wage Rate
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              Villages
+              ₹271 / day
             </p>
 
             <p className="text-gray-500 mt-2">
-              Rural livelihood, infrastructure, and community development
+              Notified wage rate for FY 2025–26
             </p>
+
+            <Term>
+              This is the daily wage the government pays for a day&apos;s
+              work under MGNREGS, Mizoram&apos;s biggest rural employment
+              guarantee programme. It is revised most years.
+            </Term>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">
+              Rural Development Spending
+            </h2>
+
+            <p className="text-4xl font-bold mt-4 text-green-400">
+              ≈ ₹1,318 Cr
+            </p>
+
+            <p className="text-gray-500 mt-2">
+              ≈7.9% of total expenditure, Budget Estimate 2026–27
+            </p>
+
+            <Term>
+              PRS Legislative Research&apos;s estimate of the rural
+              development sector&apos;s share of the state&apos;s total
+              spending this year, derived from the budget documents.
+            </Term>
           </div>
 
         </div>
@@ -107,8 +135,10 @@ export default function RuralPage() {
         </div>
 
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Rural Development Department Mizoram, MGNREGS public updates,
-          Government of Mizoram department publications, and ministerial updates.
+          Sources: Rural Development Department Mizoram, Ministry of Rural
+          Development (nrega.nic.in) wage notifications, PRS Legislative
+          Research — Mizoram Budget Analysis 2026–27, and Government of
+          Mizoram department publications.
         </p>
 
       </div>

@@ -88,6 +88,21 @@ export default function ElectionsPage() {
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
           <h2 className="text-2xl font-bold mb-4">
+            2024 Lok Sabha Election Result
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+            <p>• Winner: Richard Vanlalhmangaiha (ZPM)</p>
+            <p>• Votes: 2,08,552 (42.61% vote share)</p>
+            <p>• Winning margin: 68,288 votes</p>
+            <p>• Voter turnout: 56.87%</p>
+            <p>• Polling date: 19 April 2024 (Phase 1)</p>
+            <p>• Party: Zoram People&apos;s Movement (ZPM)</p>
+          </div>
+        </div>
+
+        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold mb-4">
             Electoral Institutions
           </h2>
 
@@ -117,8 +132,10 @@ export default function ElectionsPage() {
         </div>
 
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Election Commission of India, Chief Electoral Officer Mizoram,
-          Delimitation records, and official election statistics.
+          Sources: Election Commission of India, Chief Electoral Officer
+          Mizoram, Delimitation records, official election statistics, and
+          the 2024 Lok Sabha general election results as reported by
+          IndiaVotes and multiple national outlets.
         </p>
 
       </div>

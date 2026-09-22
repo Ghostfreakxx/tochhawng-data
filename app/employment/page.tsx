@@ -1,3 +1,6 @@
+import BudgetPieChart from "../components/BudgetPieChart";
+import Term from "../components/Term";
+
 export default function EmploymentPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
@@ -19,16 +22,42 @@ export default function EmploymentPage() {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold">
-              Main Concern
+              Unemployment Rate
             </h2>
 
             <p className="text-4xl font-bold mt-4 text-green-400">
-              Graduate Jobs
+              2.2%
             </p>
 
             <p className="text-gray-500 mt-2">
-              Employment opportunities for educated youth
+              PLFS 2022–23 — below the national average of 3.2%
             </p>
+
+            <Term>
+              Unemployment rate is the share of the labour force (people
+              working or looking for work) who are without a job. A lower
+              number generally means it&apos;s easier to find work.
+            </Term>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h2 className="text-xl font-semibold">
+              Female Labour Force Participation
+            </h2>
+
+            <p className="text-4xl font-bold mt-4 text-green-400">
+              45.1%
+            </p>
+
+            <p className="text-gray-500 mt-2">
+              PLFS 2022–23 — well above the national average of 37%
+            </p>
+
+            <Term>
+              This is the share of working-age women who are either
+              employed or actively looking for work. Mizoram&apos;s rate is
+              among the highest in India.
+            </Term>
           </div>
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
@@ -45,20 +74,6 @@ export default function EmploymentPage() {
             </p>
           </div>
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Entrepreneurship
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              Growing
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Increasing focus on startups and self-employment
-            </p>
-          </div>
-
         </div>
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
@@ -71,9 +86,24 @@ export default function EmploymentPage() {
             in Mizoram. Government jobs continue to attract large numbers of
             applicants, while the private sector, entrepreneurship, tourism,
             agriculture, and small businesses are increasingly important sources
-            of livelihood and income generation.
+            of livelihood and income generation. Official survey data (PLFS
+            2022–23) shows Mizoram with a lower unemployment rate and a
+            markedly higher female labour force participation rate than the
+            national average, though — as in much of India — the workforce
+            still leans heavily on agriculture rather than manufacturing.
           </p>
         </div>
+
+        <BudgetPieChart
+          title="Where Mizoram's Workforce Is Employed"
+          note="Share of the working population by broad sector, PLFS 2022–23 (NITI Aayog, Macro and Fiscal Landscape of Mizoram)."
+          data={[
+            { name: "Services", value: 45.7 },
+            { name: "Agriculture", value: 43.1 },
+            { name: "Manufacturing", value: 5.4 },
+            { name: "Other", value: 5.8 },
+          ]}
+        />
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
           <h2 className="text-2xl font-bold mb-4">
@@ -106,8 +136,12 @@ export default function EmploymentPage() {
         </div>
 
         <p className="text-gray-600 text-sm mt-8">
-          Sources: Labour Bureau, Government of Mizoram publications,
-          Economic Survey reports, and employment-related departmental data.
+          Sources: Periodic Labour Force Survey (PLFS) 2022–23, Ministry of
+          Statistics and Programme Implementation (MoSPI), as reported in
+          NITI Aayog&apos;s &quot;Macro and Fiscal Landscape of the State of
+          Mizoram&quot; (July 2025) — the most recent state-level labour
+          data publicly available; Labour Bureau and Government of Mizoram
+          publications.
         </p>
 
       </div>
