@@ -76,6 +76,21 @@ export default function EmploymentPage() {
 
         </div>
 
+        <div className="mt-10 bg-zinc-950 border border-green-900/60 rounded-2xl p-6">
+          <h2 className="text-lg font-semibold text-green-400 mb-2">
+            Looking for a government job?
+          </h2>
+
+          <p className="text-gray-400 leading-7">
+            See the{" "}
+            <a href="/notices" className="text-green-400 underline">
+              Recruitment &amp; Government Job Notices
+            </a>{" "}
+            page for a verified directory of where MPSC, DP&amp;AR, Mizoram
+            Police, and other official bodies publish current openings.
+          </p>
+        </div>
+
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
           <h2 className="text-2xl font-bold mb-4">
             Employment Overview

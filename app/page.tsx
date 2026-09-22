@@ -68,6 +68,11 @@ const sections = [
     description: "Jobs, labour market, and livelihood indicators.",
   },
   {
+    name: "Recruitment Notices",
+    href: "/notices",
+    description: "Where MPSC, DP&AR, Mizoram Police, and other bodies publish official job openings.",
+  },
+  {
     name: "Agriculture",
     href: "/agriculture",
     description: "Farming, crops, rural economy, and agricultural support.",
