@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
+/* Light is the default. Dark applies when the reader picks it with the
+   header toggle (data-theme="dark"), or when their device prefers dark and
+   they have not chosen light. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --page: #f7f6f3;
+  --surface: #ffffff;
+  --surface-2: #f7f6f3;
+  --line: #e7e5e4;
+  --line-strong: #d6d3d1;
+  --ink: #1c1917;
+  --ink-2: #44403c;
+  --muted: #57534e;
+  --subtle: #78716c;
+  /* Mizo red, after the deep red of the traditional puan. */
+  --accent: #b91c1c;
+  --accent-strong: #991b1b;
+  --accent-solid: #b91c1c;
+  --accent-solid-hover: #991b1b;
+  --on-accent: #ffffff;
+  --good: #15803d;
+  /* Chart series colour, validated for contrast on the light surface. */
+  --chart: #c0392b;
+  --chart-cursor: rgba(28, 25, 23, 0.05);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #000000;
+    --surface: #18181b;
+    --surface-2: #09090b;
+    --line: #27272a;
+    --line-strong: #3f3f46;
+    --ink: #ffffff;
+    --ink-2: #d4d4d8;
+    --muted: #a1a1aa;
+    --subtle: #808089;
+    --accent: #f87171;
+    --accent-strong: #fca5a5;
+    --accent-solid: #dc2626;
+    --accent-solid-hover: #b91c1c;
+    --on-accent: #ffffff;
+    --good: #4ade80;
+    --chart: #e04848;
+    --chart-cursor: rgba(255, 255, 255, 0.04);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #000000;
+  --surface: #18181b;
+  --surface-2: #09090b;
+  --line: #27272a;
+  --line-strong: #3f3f46;
+  --ink: #ffffff;
+  --ink-2: #d4d4d8;
+  --muted: #a1a1aa;
+  --subtle: #808089;
+  --accent: #f87171;
+  --accent-strong: #fca5a5;
+  --accent-solid: #dc2626;
+  --accent-solid-hover: #b91c1c;
+  --on-accent: #ffffff;
+  --good: #4ade80;
+  --chart: #e04848;
+  --chart-cursor: rgba(255, 255, 255, 0.04);
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-solid-hover: var(--accent-solid-hover);
+  --color-on-accent: var(--on-accent);
+  --color-good: var(--good);
+  --color-chart: var(--chart);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--page);
+  color: var(--ink);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: var(--accent-solid);
+  color: var(--on-accent);
 }

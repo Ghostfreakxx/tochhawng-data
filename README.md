@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tochhawng Data
 
-## Getting Started
+Public data dashboards for Mizoram: jobs and recruitment, government portals,
+budget, health, education, agriculture, rural development, roads, population,
+elections and public safety.
 
-First, run the development server:
+Built with Next.js 16 (App Router), Tailwind CSS 4 and Recharts.
+
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project layout
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/
+  data/          one file per dashboard: stats, chart series and sources
+  components/    shared UI (StatCard, Panel, BarList, TrendChart, JobsBoard, ...)
+  lib/format.ts  date and number formatting
+  <section>/page.tsx
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Every page reads its numbers from `app/data/`, so updating a figure never
+means touching layout code.
 
-## Learn More
+## Theme
 
-To learn more about Next.js, take a look at the following resources:
+The site has a light and a dark theme with a Mizo red accent. Colours are
+CSS variables in `app/globals.css` (light values on `:root`, dark values under
+`[data-theme="dark"]`), exposed to Tailwind as `bg-surface`, `text-ink`,
+`text-accent` and so on. Change a colour there and every page follows. The
+header button switches theme and remembers the choice; otherwise the
+reader's device setting is used.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Updating data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Recruitment notices:** add or edit entries in `recruitments` in
+  `app/data/jobs.ts`. Use ISO dates (`2026-11-09`) for `lastDate`. The jobs
+  board marks a notice Open or Closed from today's date in India, so old
+  notices close by themselves.
+- **Government portals:** add to `portals` in `app/data/portals.ts`. Give new
+  launches a `launched` date and they appear in the launch timeline and on the
+  home page.
+- **What's new feed:** add to the top of `app/data/updates.ts`.
+- **Last updated date:** change `lastUpdated` in `app/data/sections.ts`.
+- **New dashboard:** add it to `sections` in `app/data/sections.ts` and it
+  appears in the navigation, footer and home page grid.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every dashboard lists its sources. Add a source to the page's `...Sources`
+array whenever you add a number.

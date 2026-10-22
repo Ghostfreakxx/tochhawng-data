@@ -1,192 +1,178 @@
-const stats = [
-  {
-    title: "Population",
-    value: "12.5 Lakh",
-    note: "Estimated population of Mizoram",
-  },
-  {
-    title: "Literacy Rate",
-    value: "91.3%",
-    note: "Among the highest in India",
-  },
-  {
-    title: "State Budget",
-    value: "₹14,412 Cr",
-    note: "Budget Estimate 2024–25",
-  },
-  {
-    title: "Capital",
-    value: "Aizawl",
-    note: "Administrative centre of Mizoram",
-  },
-  {
-    title: "Districts",
-    value: "11",
-    note: "Administrative districts",
-  },
-  {
-    title: "Focus",
-    value: "Governance",
-    note: "Data, development, and public policy",
-  },
-{
-  name: "Rural Development",
-  href: "/rural",
-  description: "MGNREGS, village infrastructure, livelihood, and rural development.",
-},
-];
+import Link from "next/link";
+import { StatGrid } from "./components/StatCard";
+import { recentLaunches } from "./data/portals";
+import { sections } from "./data/sections";
+import { totalPostsTracked } from "./data/jobs";
+import { updates } from "./data/updates";
+import type { Stat } from "./data/types";
+import { formatDate } from "./lib/format";
 
-const sections = [
+const headlineStats: Stat[] = [
   {
-    name: "Budget & Finance",
-    href: "/budget",
-    description: "Government expenditure, allocations, and public finance.",
+    label: "State budget 2026–27",
+    value: "₹17,077 Cr",
+    note: "Budgeted spending, with no new taxes",
   },
   {
-    name: "Population",
-    href: "/population",
-    description: "Population growth, demographics, and urbanisation.",
+    label: "Literacy rate",
+    value: "98.2%",
+    note: "Declared fully literate in May 2025",
   },
   {
-    name: "Education",
-    href: "/education",
-    description: "Literacy, institutions, and educational development.",
+    label: "MUHCS 2.0 families",
+    value: "3.22 lakh",
+    note: "Enrolled in the universal health scheme",
   },
   {
-    name: "Health",
-    href: "/health",
-    description: "Healthcare services, hospitals, and public health.",
+    label: "Govt posts advertised",
+    value: totalPostsTracked.toLocaleString("en-IN"),
+    note: "In MPSC and police notices tracked for 2026",
   },
   {
-    name: "Roads & Infrastructure",
-    href: "/roads",
-    description: "Connectivity, highways, and infrastructure projects.",
+    label: "Online portals",
+    value: "20+",
+    note: "Government services launched online in two years",
   },
   {
-    name: "Employment",
-    href: "/employment",
-    description: "Jobs, labour market, and livelihood indicators.",
+    label: "Drugs seized",
+    value: "₹846 Cr",
+    note: "January to August 2026",
   },
   {
-    name: "Agriculture",
-    href: "/agriculture",
-    description: "Farming, crops, rural economy, and agricultural support.",
+    label: "Population",
+    value: "~12.5 lakh",
+    note: "2024 estimate; 10.97 lakh at Census 2011",
   },
   {
-    name: "Elections",
-    href: "/elections",
-    description: "Democracy, participation, and electoral statistics.",
-  },
-  {
-    name: "Crime & Public Safety",
-    href: "/crime",
-    description: "Crime trends, cybercrime, and public safety indicators.",
+    label: "Rural work guarantee",
+    value: "125 days",
+    note: "Under VB-G RAM G from July 2026",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-8">
-
-      <nav className="max-w-7xl mx-auto flex justify-between items-center mb-20">
-        <h1 className="text-xl font-bold tracking-wide">
-          Tochhawng Data
+    <>
+      <section className="pt-16 pb-12 sm:pt-24">
+        <p className="text-sm font-medium text-accent">
+          Public data dashboard for Mizoram
+        </p>
+        <h1 className="mt-4 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-ink sm:text-6xl">
+          Understanding Mizoram through data, governance and public policy.
         </h1>
-
-        <p className="text-sm text-gray-400">
-          Mizoram Through Numbers
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+          Tochhawng Data turns budget documents, government releases and
+          official portals into clear dashboards for students, researchers,
+          journalists, job seekers and every citizen of Mizoram.
         </p>
-      </nav>
-
-      <section className="max-w-7xl mx-auto mb-16">
-        <p className="text-sm text-gray-400 mb-4">
-          Public Data Dashboard for Mizoram
-        </p>
-
-        <h2 className="text-5xl md:text-7xl font-bold max-w-5xl leading-tight">
-          Understanding Mizoram through data, governance, development, and public policy.
-        </h2>
-
-        <p className="text-gray-400 max-w-3xl mt-6 text-lg">
-          Tochhawng Data presents publicly available information in a simple and
-          accessible format for students, researchers, policymakers, journalists,
-          and citizens interested in Mizoram.
-        </p>
-      </section>
-
-      <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-        {stats.map((item) => (
-          <div
-            key={item.title}
-            className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-600 transition"
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/employment"
+            className="rounded-full bg-accent-solid px-5 py-2.5 text-sm font-semibold text-on-accent transition hover:bg-accent-solid-hover"
           >
-            <p className="text-gray-400 text-sm">
-              {item.title}
-            </p>
-
-            <h3 className="text-4xl font-bold mt-3 text-green-400">
-              {item.value}
-            </h3>
-
-            <p className="text-gray-500 mt-3 text-sm">
-              {item.note}
-            </p>
-          </div>
-        ))}
+            Latest government jobs
+          </Link>
+          <Link
+            href="/portals"
+            className="rounded-full border border-line-strong px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-subtle"
+          >
+            New government portals
+          </Link>
+          <a
+            href="#dashboards"
+            className="rounded-full px-5 py-2.5 text-sm font-semibold text-ink-2 transition hover:text-ink"
+          >
+            All dashboards ↓
+          </a>
+        </div>
       </section>
 
-      <section className="max-w-7xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-6">
-          Dashboard Sections
-        </h2>
+      <StatGrid stats={headlineStats} />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[1.5fr_1fr]">
+        <div>
+          <h2 className="text-2xl font-bold text-ink sm:text-3xl">What’s new</h2>
+          <ol className="mt-6 divide-y divide-line border-y border-line">
+            {updates.slice(0, 8).map((update) => (
+              <li key={update.title}>
+                <Link
+                  href={update.href}
+                  className="group grid gap-1 py-4 sm:grid-cols-[7.5rem_1fr] sm:gap-6"
+                >
+                  <span className="text-sm tabular-nums text-subtle">
+                    {formatDate(update.date)}
+                  </span>
+                  <span>
+                    <span className="font-semibold text-ink transition group-hover:text-accent">
+                      {update.title}
+                    </span>
+                    <span className="mt-1 block text-sm leading-6 text-muted">
+                      {update.summary}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <aside className="h-fit rounded-2xl border border-line bg-surface p-6">
+          <h2 className="text-xl font-bold text-ink">Recently launched portals</h2>
+          <p className="mt-2 text-sm leading-6 text-muted">
+            Government services that went online in 2025–26.
+          </p>
+          <ul className="mt-5 space-y-4">
+            {recentLaunches.slice(0, 6).map((p) => (
+              <li key={p.name} className="border-l-2 border-accent/60 pl-3">
+                <p className="text-sm font-medium text-ink">{p.name}</p>
+                <p className="text-xs text-subtle">{formatDate(p.launched!)}</p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/portals"
+            className="mt-6 inline-block text-sm font-medium text-accent transition hover:text-accent-strong"
+          >
+            See all {recentLaunches.length} launches →
+          </Link>
+        </aside>
+      </section>
+
+      <section id="dashboards" className="mt-16 scroll-mt-28">
+        <h2 className="text-2xl font-bold text-ink sm:text-3xl">Dashboards</h2>
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {sections.map((section) => (
-            <div
-              key={section.name}
-              className="bg-zinc-950 border border-zinc-800 rounded-xl p-5"
+            <Link
+              key={section.href}
+              href={section.href}
+              className="group rounded-2xl border border-line bg-surface-2 p-6 transition hover:border-accent/60 hover:bg-surface"
             >
-              <h3 className="font-semibold text-lg">
-                {section.name}
-              </h3>
-
-              <p className="text-gray-500 text-sm mt-3 mb-4">
+              <h3 className="text-lg font-semibold text-ink">{section.name}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">
                 {section.description}
               </p>
-
-              <a
-                href={section.href}
-                className="text-green-400 text-sm hover:text-green-300"
-              >
-                Open Dashboard →
-              </a>
-            </div>
+              <p className="mt-4 text-sm font-medium text-accent">
+                Open dashboard{" "}
+                <span className="inline-block transition group-hover:translate-x-1">
+                  →
+                </span>
+              </p>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto mb-16">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">
-            About Tochhawng Data
-          </h2>
-
-          <p className="text-gray-400 leading-7">
-            This project aims to improve public understanding of Mizoram through
-            accessible data visualisation and policy-focused dashboards. The
-            platform covers governance, development, demographics, education,
-            health, infrastructure, public finance, employment, agriculture,
-            elections, and public safety.
-          </p>
-        </div>
+      <section className="mt-16 rounded-2xl border border-line bg-surface p-8">
+        <h2 className="text-2xl font-bold text-ink">About Tochhawng Data</h2>
+        <p className="mt-4 max-w-4xl leading-7 text-muted">
+          Tochhawng Data makes public information about Mizoram easier to find
+          and understand. Each dashboard cites its sources, including budget
+          documents, PRS Legislative Research, the Census of India, the Election
+          Commission, department reports, official portals and news reports of
+          government statements. Numbers from press reports are marked as such
+          and should be checked against the original before being cited.
+        </p>
       </section>
-
-      <footer className="max-w-7xl mx-auto border-t border-zinc-800 pt-6 text-sm text-gray-500">
-        Sources include Mizoram Budget Documents, Census of India,
-        Election Commission of India, Government of Mizoram publications,
-        RBI reports, NCRB reports, Economic Survey reports, and departmental data.
-      </footer>
-
-    </main>
+    </>
   );
 }
