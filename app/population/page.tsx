@@ -1,126 +1,64 @@
-import DataChart from "../components/DataChart";
+import type { Metadata } from "next";
+import BulletList from "../components/BulletList";
+import PageHeader from "../components/PageHeader";
+import Panel from "../components/Panel";
+import SourceList from "../components/SourceList";
+import { StatGrid } from "../components/StatCard";
+import TrendChart from "../components/TrendChart";
+import {
+  demographicHighlights,
+  populationChallenges,
+  populationSources,
+  populationStats,
+  populationTrend,
+} from "../data/population";
+
+export const metadata: Metadata = {
+  title: "Population",
+  description:
+    "Mizoram population from the Census, growth, urbanisation and demographic indicators.",
+};
 
 export default function PopulationPage() {
   return (
-    <main className="min-h-screen bg-black text-white p-8">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <PageHeader
+        title="Population"
+        description="Mizoram is one of India's least populous states, but also one of its most urbanised and literate."
+      />
 
-        <a href="/" className="text-gray-400 text-sm">
-          ← Back to Overview
-        </a>
+      <StatGrid stats={populationStats} />
 
-        <h1 className="text-5xl font-bold mt-6 mb-4">
-          Mizoram Population Dashboard
-        </h1>
-
-        <p className="text-gray-400 mb-10">
-          Population, demographics, districts, urbanisation, and social indicators.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Population
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              12.5 Lakh
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Estimated population of Mizoram
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Districts
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              11
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Administrative districts
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Urban Population
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              52%
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Population residing in urban areas
-            </p>
-          </div>
-
-        </div>
-
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Population Overview
-          </h2>
-
-          <p className="text-gray-400 leading-7">
-            Mizoram is one of India's least populated states but has one of the
-            highest literacy rates and urbanisation levels in the Northeast.
-            Population growth has remained relatively moderate, while migration,
-            education, and urban development continue to shape demographic trends.
-          </p>
-        </div>
-
-        <DataChart
-          title="Population Growth Trend (Lakh)"
-          data={[
-            { year: "2001", value: 8.9 },
-            { year: "2011", value: 10.9 },
-            { year: "2024", value: 12.5 },
-          ]}
+      <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+        <TrendChart
+          kind="column"
+          title="Population (lakh)"
+          description="Census counts for 1991, 2001 and 2011. The 2024 figure is an estimate."
+          data={populationTrend}
+          unit={{ decimals: 2 }}
+          valueLabel="Lakh"
         />
 
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Demographic Highlights
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
-            <p>• High literacy population</p>
-            <p>• Predominantly urbanising society</p>
-            <p>• Young and educated workforce</p>
-            <p>• Strong community-based social structure</p>
-            <p>• Growing migration toward Aizawl</p>
-            <p>• Increasing demand for housing and services</p>
-          </div>
-        </div>
-
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Key Challenges
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
-            <p>• Urban congestion in Aizawl</p>
-            <p>• Employment opportunities for youth</p>
-            <p>• Rural to urban migration</p>
-            <p>• Infrastructure demand</p>
-            <p>• Housing affordability</p>
-            <p>• Balanced regional development</p>
-          </div>
-        </div>
-
-        <p className="text-gray-600 text-sm mt-8">
-          Sources: Census of India, Statistical Handbook of Mizoram,
-          Economic Survey Reports, and Government Publications.
-        </p>
-
+        <Panel title="Census 2027">
+          <p className="leading-7 text-zinc-300">
+            The next census is under way. House-listing was carried out in
+            2026, and the population count follows with 1 March 2027 as the
+            reference date. Until then, Census 2011 remains the only official
+            headcount, and later figures are projections.
+          </p>
+        </Panel>
       </div>
-    </main>
+
+      <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+        <Panel title="Demographic highlights">
+          <BulletList items={demographicHighlights} />
+        </Panel>
+        <Panel title="Key challenges">
+          <BulletList items={populationChallenges} />
+        </Panel>
+      </div>
+
+      <SourceList sources={populationSources} />
+    </>
   );
 }

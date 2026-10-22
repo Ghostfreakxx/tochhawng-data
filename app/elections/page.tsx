@@ -1,127 +1,110 @@
-import DataChart from "../components/DataChart";
+import type { Metadata } from "next";
+import BarList from "../components/BarList";
+import BulletList from "../components/BulletList";
+import PageHeader from "../components/PageHeader";
+import Panel from "../components/Panel";
+import SourceList from "../components/SourceList";
+import { StatGrid } from "../components/StatCard";
+import TrendChart from "../components/TrendChart";
+import {
+  amc2026,
+  assembly2023,
+  electionFacts,
+  electionSources,
+  electionStats,
+  lokSabha2024,
+  turnoutTrend,
+} from "../data/elections";
+
+export const metadata: Metadata = {
+  title: "Elections",
+  description:
+    "Mizoram Assembly 2023, Lok Sabha 2024 and Aizawl Municipal Corporation 2026 results, and voter turnout.",
+};
+
+const lokSabhaTotal = lokSabha2024.reduce((sum, c) => sum + c.votes, 0);
 
 export default function ElectionsPage() {
   return (
-    <main className="min-h-screen bg-black text-white p-8">
-      <div className="max-w-6xl mx-auto">
+    <>
+      <PageHeader
+        title="Elections"
+        description="The Zoram People's Movement (ZPM) won the Assembly in 2023, the Lok Sabha seat in 2024 and Aizawl's municipal corporation in 2026."
+      />
 
-        <a href="/" className="text-gray-400 text-sm">
-          ← Back to Overview
-        </a>
+      <StatGrid stats={electionStats} />
 
-        <h1 className="text-5xl font-bold mt-6 mb-4">
-          Mizoram Elections Dashboard
-        </h1>
-
-        <p className="text-gray-400 mb-10">
-          Elections, voter participation, representation, and democratic trends.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Assembly Seats
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              40
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Mizoram Legislative Assembly constituencies
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Lok Sabha Seats
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              1
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Mizoram representation in Parliament
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Rajya Sabha Seats
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              1
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Upper House representation
-            </p>
-          </div>
-
-        </div>
-
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Election Overview
-          </h2>
-
-          <p className="text-gray-400 leading-7">
-            Mizoram consistently records high voter participation compared to
-            many parts of India. Elections in the state are characterized by
-            strong public engagement, peaceful transitions of power, and active
-            participation across urban and rural constituencies.
-          </p>
-        </div>
-
-        <DataChart
-          title="Assembly Election Voter Turnout (%)"
-          data={[
-            { year: "2008", value: 75.2 },
-            { year: "2013", value: 81.3 },
-            { year: "2018", value: 80.4 },
-            { year: "2023", value: 80.7 },
-          ]}
+      <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+        <BarList
+          title="Assembly 2023: seats won"
+          description="40 seats; 21 needed for a majority."
+          data={assembly2023}
         />
 
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Electoral Institutions
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
-            <p>• Election Commission of India</p>
-            <p>• Chief Electoral Officer, Mizoram</p>
-            <p>• State Legislative Assembly</p>
-            <p>• Parliamentary Constituency Administration</p>
-            <p>• Polling Stations and Electoral Rolls</p>
-            <p>• Voter Awareness Programmes</p>
-          </div>
-        </div>
-
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Key Election Facts
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
-            <p>• 40 Assembly Constituencies</p>
-            <p>• 1 Lok Sabha Constituency</p>
-            <p>• 1 Rajya Sabha Seat</p>
-            <p>• High voter turnout tradition</p>
-            <p>• Regular democratic transfer of power</p>
-            <p>• Strong electoral participation across districts</p>
-          </div>
-        </div>
-
-        <p className="text-gray-600 text-sm mt-8">
-          Sources: Election Commission of India, Chief Electoral Officer Mizoram,
-          Delimitation records, and official election statistics.
-        </p>
-
+        <TrendChart
+          kind="line"
+          title="Assembly voter turnout (%)"
+          description="Turnout has stayed above 80% for four elections. The 2023 figure is provisional."
+          data={turnoutTrend}
+          unit={{ suffix: "%", decimals: 2 }}
+          yDomain={[70, 90]}
+          valueLabel="Turnout"
+        />
       </div>
-    </main>
+
+      <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+        <Panel
+          title="Lok Sabha 2024"
+          description="Mizoram's single seat; polled 19 April 2024, turnout 56.87%."
+        >
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="border-b border-zinc-800 text-zinc-500">
+                <th className="py-2 font-medium">Candidate</th>
+                <th className="py-2 font-medium">Party</th>
+                <th className="py-2 text-right font-medium">Votes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lokSabha2024.map((c, i) => (
+                <tr key={c.candidate} className="border-b border-zinc-800/60">
+                  <td className={`py-2.5 ${i === 0 ? "font-semibold text-white" : "text-zinc-300"}`}>
+                    {c.candidate}
+                  </td>
+                  <td className="py-2.5 text-zinc-400">{c.party}</td>
+                  <td className="py-2.5 text-right tabular-nums text-zinc-200">
+                    {c.votes.toLocaleString("en-IN")}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="mt-3 text-xs text-zinc-500">
+            The four main candidates polled{" "}
+            {lokSabhaTotal.toLocaleString("en-IN")} votes between them.
+          </p>
+        </Panel>
+
+        <Panel
+          title="Aizawl Municipal Corporation 2026"
+          description="Wards won out of 19, April 2026. In 2021 the MNF won 11."
+        >
+          <dl className="grid grid-cols-2 gap-4">
+            {amc2026.map((p) => (
+              <div key={p.party} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
+                <dt className="text-sm text-zinc-400">{p.party}</dt>
+                <dd className="mt-1 text-3xl font-bold text-white">{p.wards}</dd>
+              </div>
+            ))}
+          </dl>
+        </Panel>
+      </div>
+
+      <Panel title="Key facts">
+        <BulletList items={electionFacts} />
+      </Panel>
+
+      <SourceList sources={electionSources} />
+    </>
   );
 }
