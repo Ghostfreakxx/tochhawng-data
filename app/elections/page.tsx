@@ -59,7 +59,7 @@ export default function ElectionsPage() {
         >
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-zinc-800 text-zinc-500">
+              <tr className="border-b border-line text-subtle">
                 <th className="py-2 font-medium">Candidate</th>
                 <th className="py-2 font-medium">Party</th>
                 <th className="py-2 text-right font-medium">Votes</th>
@@ -67,19 +67,19 @@ export default function ElectionsPage() {
             </thead>
             <tbody>
               {lokSabha2024.map((c, i) => (
-                <tr key={c.candidate} className="border-b border-zinc-800/60">
-                  <td className={`py-2.5 ${i === 0 ? "font-semibold text-white" : "text-zinc-300"}`}>
+                <tr key={c.candidate} className="border-b border-line/60">
+                  <td className={`py-2.5 ${i === 0 ? "font-semibold text-ink" : "text-ink-2"}`}>
                     {c.candidate}
                   </td>
-                  <td className="py-2.5 text-zinc-400">{c.party}</td>
-                  <td className="py-2.5 text-right tabular-nums text-zinc-200">
+                  <td className="py-2.5 text-muted">{c.party}</td>
+                  <td className="py-2.5 text-right tabular-nums text-ink-2">
                     {c.votes.toLocaleString("en-IN")}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="mt-3 text-xs text-zinc-500">
+          <p className="mt-3 text-xs text-subtle">
             The four main candidates polled{" "}
             {lokSabhaTotal.toLocaleString("en-IN")} votes between them.
           </p>
@@ -91,9 +91,9 @@ export default function ElectionsPage() {
         >
           <dl className="grid grid-cols-2 gap-4">
             {amc2026.map((p) => (
-              <div key={p.party} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-                <dt className="text-sm text-zinc-400">{p.party}</dt>
-                <dd className="mt-1 text-3xl font-bold text-white">{p.wards}</dd>
+              <div key={p.party} className="rounded-xl border border-line bg-surface-2 p-4">
+                <dt className="text-sm text-muted">{p.party}</dt>
+                <dd className="mt-1 text-3xl font-bold text-ink">{p.wards}</dd>
               </div>
             ))}
           </dl>

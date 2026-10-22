@@ -2,12 +2,12 @@ import type { Stat } from "../data/types";
 
 export default function StatCard({ label, value, note }: Stat) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-      <p className="text-sm text-zinc-400">{label}</p>
-      <p className="mt-3 text-3xl font-bold tracking-tight text-green-400 sm:text-4xl">
+    <div className="rounded-2xl border border-line bg-surface p-6">
+      <p className="text-sm text-muted">{label}</p>
+      <p className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
         {value}
       </p>
-      <p className="mt-3 text-sm leading-6 text-zinc-500">{note}</p>
+      <p className="mt-3 text-sm leading-6 text-subtle">{note}</p>
     </div>
   );
 }

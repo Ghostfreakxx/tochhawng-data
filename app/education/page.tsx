@@ -48,9 +48,9 @@ export default function EducationPage() {
         >
           <dl className="grid grid-cols-2 gap-4">
             {hslcDistricts.map((d) => (
-              <div key={d.label} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-                <dt className="text-sm text-zinc-400">{d.label}</dt>
-                <dd className="mt-2 text-2xl font-bold text-white">{d.value}</dd>
+              <div key={d.label} className="rounded-xl border border-line bg-surface-2 p-4">
+                <dt className="text-sm text-muted">{d.label}</dt>
+                <dd className="mt-2 text-2xl font-bold text-ink">{d.value}</dd>
               </div>
             ))}
           </dl>
@@ -63,9 +63,9 @@ export default function EducationPage() {
       >
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {hsslcStreams.map((s) => (
-            <div key={s.stream} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <dt className="text-sm text-zinc-400">{s.stream}</dt>
-              <dd className="mt-2 text-3xl font-bold text-green-400">{s.pass}</dd>
+            <div key={s.stream} className="rounded-xl border border-line bg-surface-2 p-5">
+              <dt className="text-sm text-muted">{s.stream}</dt>
+              <dd className="mt-2 text-3xl font-bold text-ink">{s.pass}</dd>
             </div>
           ))}
         </dl>

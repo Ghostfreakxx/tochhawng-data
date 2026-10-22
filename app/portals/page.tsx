@@ -32,18 +32,18 @@ export default function PortalsPage() {
         title="Launch timeline"
         description="Portals and digital systems launched since 2025, newest first."
       >
-        <ol className="relative space-y-7 border-l border-zinc-800 pl-6">
+        <ol className="relative space-y-7 border-l border-line pl-6">
           {recentLaunches.map((p) => (
             <li key={p.name}>
               <span
-                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-green-400"
+                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-accent-solid"
                 aria-hidden
               />
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm text-subtle">
                 {formatDate(p.launched!)} · {p.department}
               </p>
-              <h3 className="mt-1 font-semibold text-white">{p.name}</h3>
-              <p className="mt-1 max-w-3xl text-sm leading-6 text-zinc-400">
+              <h3 className="mt-1 font-semibold text-ink">{p.name}</h3>
+              <p className="mt-1 max-w-3xl text-sm leading-6 text-muted">
                 {p.description}
               </p>
               {p.url && (
@@ -51,7 +51,7 @@ export default function PortalsPage() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm text-green-400 transition hover:text-green-300"
+                  className="mt-1 inline-block text-sm text-accent transition hover:text-accent-strong"
                 >
                   {hostname(p.url)} ↗
                 </a>

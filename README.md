@@ -28,6 +28,15 @@ app/
 Every page reads its numbers from `app/data/`, so updating a figure never
 means touching layout code.
 
+## Theme
+
+The site has a light and a dark theme with a Mizo red accent. Colours are
+CSS variables in `app/globals.css` (light values on `:root`, dark values under
+`[data-theme="dark"]`), exposed to Tailwind as `bg-surface`, `text-ink`,
+`text-accent` and so on. Change a colour there and every page follows. The
+header button switches theme and remembers the choice; otherwise the
+reader's device setting is used.
+
 ## Updating data
 
 - **Recruitment notices:** add or edit entries in `recruitments` in

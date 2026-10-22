@@ -54,9 +54,9 @@ export default function CrimePage() {
       >
         <dl className="grid grid-cols-2 gap-4 md:grid-cols-5">
           {homeDeptHighlights.map((h) => (
-            <div key={h.label} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-              <dt className="text-xs text-zinc-400">{h.label}</dt>
-              <dd className="mt-2 text-xl font-bold text-white">{h.value}</dd>
+            <div key={h.label} className="rounded-xl border border-line bg-surface-2 p-4">
+              <dt className="text-xs text-muted">{h.label}</dt>
+              <dd className="mt-2 text-xl font-bold text-ink">{h.value}</dd>
             </div>
           ))}
         </dl>

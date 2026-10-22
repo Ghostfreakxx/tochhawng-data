@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import Script from "next/script";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { themeScript } from "./lib/theme";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -25,7 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geistSans.variable}>
+    // The theme script sets data-theme on <html> before hydration.
+    <html lang="en" className={geistSans.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-screen font-sans antialiased">
         <Navbar />
         <main className="mx-auto max-w-7xl px-4 sm:px-6">{children}</main>

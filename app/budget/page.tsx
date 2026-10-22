@@ -54,7 +54,7 @@ export default function BudgetPage() {
         title="Budget overview"
         description="Where the money comes from, and what it is spent on."
       >
-        <p className="max-w-4xl leading-7 text-zinc-300">
+        <p className="max-w-4xl leading-7 text-ink-2">
           Mizoram expects ₹17,470 Cr in receipts in 2026–27, and ₹8,608 Cr of
           that is its share of central taxes. The state remains heavily
           dependent on transfers from the Union Government. Revenue spending on

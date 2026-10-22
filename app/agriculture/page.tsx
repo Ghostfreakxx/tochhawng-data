@@ -32,18 +32,18 @@ export default function AgriculturePage() {
         title="Bana Kaih progress"
         description="Beneficiaries are called Progress Partners. Since October 2026 their payments go straight to their bank accounts through 100% DBT."
       >
-        <dl className="divide-y divide-zinc-800 rounded-xl border border-zinc-800">
+        <dl className="divide-y divide-line rounded-xl border border-line">
           {banaKaihProgress.map((row) => (
             <div
               key={row.label}
               className="flex items-baseline justify-between gap-6 px-5 py-3.5"
             >
-              <dt className="text-sm text-zinc-300">{row.label}</dt>
-              <dd className="font-semibold tabular-nums text-white">{row.value}</dd>
+              <dt className="text-sm text-ink-2">{row.label}</dt>
+              <dd className="font-semibold tabular-nums text-ink">{row.value}</dd>
             </div>
           ))}
         </dl>
-        <p className="mt-3 text-xs leading-5 text-zinc-500">
+        <p className="mt-3 text-xs leading-5 text-subtle">
           These figures come from reports at different dates and may not add up
           exactly.
         </p>
@@ -57,10 +57,10 @@ export default function AgriculturePage() {
           {keyCrops.map((crop) => (
             <li
               key={crop.name}
-              className="rounded-xl border border-zinc-800 bg-zinc-950 p-5"
+              className="rounded-xl border border-line bg-surface-2 p-5"
             >
-              <p className="text-lg font-semibold text-green-400">{crop.name}</p>
-              <p className="mt-2 text-sm text-zinc-500">{crop.note}</p>
+              <p className="text-lg font-semibold text-ink">{crop.name}</p>
+              <p className="mt-2 text-sm text-subtle">{crop.note}</p>
             </li>
           ))}
         </ul>

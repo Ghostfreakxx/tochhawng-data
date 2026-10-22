@@ -60,13 +60,13 @@ export default function EmploymentPage() {
                 href={channel.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block h-full rounded-xl border border-zinc-800 bg-zinc-950 p-5 transition hover:border-green-500/60"
+                className="block h-full rounded-xl border border-line bg-surface-2 p-5 transition hover:border-accent/60"
               >
-                <p className="font-semibold text-white">{channel.name}</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">
+                <p className="font-semibold text-ink">{channel.name}</p>
+                <p className="mt-2 text-sm leading-6 text-muted">
                   {channel.note}
                 </p>
-                <p className="mt-3 text-sm text-green-400">
+                <p className="mt-3 text-sm text-accent">
                   {hostname(channel.url)} ↗
                 </p>
               </a>
@@ -76,16 +76,16 @@ export default function EmploymentPage() {
       </Panel>
 
       <Panel title="Job fairs and employment schemes">
-        <ol className="relative space-y-6 border-l border-zinc-800 pl-6">
+        <ol className="relative space-y-6 border-l border-line pl-6">
           {jobEvents.map((event) => (
             <li key={event.title}>
               <span
-                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-green-400"
+                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-accent-solid"
                 aria-hidden
               />
-              <p className="text-sm text-zinc-500">{event.date}</p>
-              <h3 className="mt-1 font-semibold text-white">{event.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-zinc-400">
+              <p className="text-sm text-subtle">{event.date}</p>
+              <h3 className="mt-1 font-semibold text-ink">{event.title}</h3>
+              <p className="mt-1 text-sm leading-6 text-muted">
                 {event.detail}
               </p>
             </li>

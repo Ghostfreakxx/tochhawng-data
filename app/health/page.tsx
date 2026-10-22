@@ -37,16 +37,16 @@ export default function HealthPage() {
       />
 
       <Panel title="Scheme timeline">
-        <ol className="relative space-y-6 border-l border-zinc-800 pl-6">
+        <ol className="relative space-y-6 border-l border-line pl-6">
           {healthMilestones.map((m) => (
             <li key={m.title}>
               <span
-                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-green-400"
+                className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-accent-solid"
                 aria-hidden
               />
-              <p className="text-sm text-zinc-500">{m.date}</p>
-              <h3 className="mt-1 font-semibold text-white">{m.title}</h3>
-              <p className="mt-1 max-w-3xl text-sm leading-6 text-zinc-400">
+              <p className="text-sm text-subtle">{m.date}</p>
+              <h3 className="mt-1 font-semibold text-ink">{m.title}</h3>
+              <p className="mt-1 max-w-3xl text-sm leading-6 text-muted">
                 {m.detail}
               </p>
             </li>

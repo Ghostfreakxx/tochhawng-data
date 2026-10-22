@@ -40,7 +40,7 @@ export default function PopulationPage() {
         />
 
         <Panel title="Census 2027">
-          <p className="leading-7 text-zinc-300">
+          <p className="leading-7 text-ink-2">
             The next census is under way. House-listing was carried out in
             2026, and the population count follows with 1 March 2027 as the
             reference date. Until then, Census 2011 remains the only official

@@ -36,10 +36,10 @@ export default function RuralPage() {
           {ramgChanges.map((change) => (
             <li
               key={change.title}
-              className="rounded-xl border border-zinc-800 bg-zinc-950 p-5"
+              className="rounded-xl border border-line bg-surface-2 p-5"
             >
-              <p className="font-semibold text-white">{change.title}</p>
-              <p className="mt-2 text-sm leading-6 text-zinc-400">
+              <p className="font-semibold text-ink">{change.title}</p>
+              <p className="mt-2 text-sm leading-6 text-muted">
                 {change.detail}
               </p>
             </li>
@@ -48,7 +48,7 @@ export default function RuralPage() {
       </Panel>
 
       <Panel title="Why it matters">
-        <p className="max-w-4xl leading-7 text-zinc-300">
+        <p className="max-w-4xl leading-7 text-ink-2">
           Many households in Mizoram depend on village livelihoods, farm work
           and public works. As a North-Eastern state, Mizoram pays only 10% of
           the programme&apos;s cost, but the extra 25 days of guaranteed work and

@@ -43,7 +43,7 @@ function StatusBadge({ job, today }: { job: Recruitment; today: string }) {
 
   if (status === "notice") {
     return (
-      <span className="rounded-full border border-zinc-700 px-2.5 py-0.5 text-xs text-zinc-400">
+      <span className="rounded-full border border-line-strong px-2.5 py-0.5 text-xs text-muted">
         See notice
       </span>
     );
@@ -51,7 +51,7 @@ function StatusBadge({ job, today }: { job: Recruitment; today: string }) {
 
   if (status === "closed") {
     return (
-      <span className="rounded-full border border-zinc-700 px-2.5 py-0.5 text-xs text-zinc-500">
+      <span className="rounded-full border border-line-strong px-2.5 py-0.5 text-xs text-subtle">
         Closed
       </span>
     );
@@ -62,8 +62,8 @@ function StatusBadge({ job, today }: { job: Recruitment; today: string }) {
     days === 0 ? "Closes today" : days === 1 ? "Closes tomorrow" : `Open · ${days} days left`;
 
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/40 bg-green-500/10 px-2.5 py-0.5 text-xs font-medium text-green-300">
-      <span className="size-1.5 rounded-full bg-green-400" aria-hidden />
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-good/40 bg-good/10 px-2.5 py-0.5 text-xs font-medium text-good">
+      <span className="size-1.5 rounded-full bg-good" aria-hidden />
       {label}
     </span>
   );
@@ -89,8 +89,8 @@ export default function JobsBoard({ jobs }: { jobs: Recruitment[] }) {
             aria-pressed={filter === f.value}
             className={`rounded-full border px-3.5 py-1.5 text-sm transition ${
               filter === f.value
-                ? "border-green-400 bg-green-400 font-medium text-black"
-                : "border-zinc-700 text-zinc-300 hover:border-zinc-500"
+                ? "border-accent-solid bg-accent-solid font-medium text-on-accent"
+                : "border-line-strong text-ink-2 hover:border-subtle"
             }`}
           >
             {f.label}
@@ -104,12 +104,12 @@ export default function JobsBoard({ jobs }: { jobs: Recruitment[] }) {
       </div>
 
       {visible.length === 0 ? (
-        <p className="mt-6 rounded-xl border border-dashed border-zinc-700 p-6 text-sm text-zinc-400">
+        <p className="mt-6 rounded-xl border border-dashed border-line-strong p-6 text-sm text-muted">
           No notices match this filter right now. Check MPSC Online and EmpEx
           for new advertisements.
         </p>
       ) : (
-        <ul className="mt-5 divide-y divide-zinc-800 rounded-xl border border-zinc-800">
+        <ul className="mt-5 divide-y divide-line rounded-xl border border-line">
           {visible.map((job) => (
             <li
               key={job.title}
@@ -117,18 +117,18 @@ export default function JobsBoard({ jobs }: { jobs: Recruitment[] }) {
             >
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-md bg-zinc-800 px-2 py-0.5 text-xs text-zinc-300">
+                  <span className="rounded-md bg-line px-2 py-0.5 text-xs text-ink-2">
                     {job.recruiter}
                   </span>
                   {today && <StatusBadge job={job} today={today} />}
                 </div>
-                <h3 className="mt-2 font-semibold text-white">{job.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-zinc-400">{job.detail}</p>
+                <h3 className="mt-2 font-semibold text-ink">{job.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted">{job.detail}</p>
                 <a
                   href={job.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm text-green-400 transition hover:text-green-300"
+                  className="mt-2 inline-block text-sm text-accent transition hover:text-accent-strong"
                 >
                   {hostname(job.link)} ↗
                 </a>
@@ -136,14 +136,14 @@ export default function JobsBoard({ jobs }: { jobs: Recruitment[] }) {
 
               <dl className="flex gap-8 text-sm md:flex-col md:gap-3 md:text-right">
                 <div>
-                  <dt className="text-zinc-500">Posts</dt>
-                  <dd className="text-lg font-semibold tabular-nums text-white">
+                  <dt className="text-subtle">Posts</dt>
+                  <dd className="text-lg font-semibold tabular-nums text-ink">
                     {job.posts ?? "–"}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-500">Last date</dt>
-                  <dd className="text-zinc-200">
+                  <dt className="text-subtle">Last date</dt>
+                  <dd className="text-ink-2">
                     {job.lastDate ? formatDate(job.lastDate) : "See notice"}
                   </dd>
                 </div>

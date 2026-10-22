@@ -28,7 +28,7 @@ export default function RoadsPage() {
       <StatGrid stats={roadStats} />
 
       <Panel title="Infrastructure overview">
-        <p className="max-w-4xl leading-7 text-zinc-300">
+        <p className="max-w-4xl leading-7 text-ink-2">
           Road connectivity remains one of Mizoram&apos;s biggest development
           priorities. The 2026–27 budget gives ₹359 Cr to roads and bridges,
           and ₹183.25 Cr in total to road maintenance. The Bairabi–Sairang

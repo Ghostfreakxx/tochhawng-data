@@ -15,12 +15,13 @@ import {
 import type { Datum } from "../data/types";
 import { formatValue, type Unit } from "../lib/format";
 
-const SERIES = "#16a34a";
-const SURFACE = "#18181b";
-const GRID = "#27272a";
-const AXIS = "#3f3f46";
-const MUTED = "#a1a1aa";
-const INK = "#e4e4e7";
+// Theme tokens from globals.css, so charts follow the light/dark switch.
+const SERIES = "var(--chart)";
+const SURFACE = "var(--surface)";
+const GRID = "var(--line)";
+const AXIS = "var(--line-strong)";
+const MUTED = "var(--muted)";
+const INK = "var(--ink-2)";
 
 type TrendChartProps = {
   title: string;
@@ -53,12 +54,12 @@ export default function TrendChart({
 
   const tooltip = (
     <Tooltip
-      cursor={kind === "line" ? { stroke: AXIS } : { fill: "rgba(255,255,255,0.04)" }}
+      cursor={kind === "line" ? { stroke: AXIS } : { fill: "var(--chart-cursor)" }}
       content={({ active, payload, label }) =>
         active && payload?.length ? (
-          <div className="rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm shadow-lg">
-            <p className="text-zinc-400">{label}</p>
-            <p className="font-semibold text-white">
+          <div className="rounded-lg border border-line-strong bg-surface-2 px-3 py-2 text-sm shadow-lg">
+            <p className="text-muted">{label}</p>
+            <p className="font-semibold text-ink">
               {format(Number(payload[0].value))}
             </p>
           </div>
@@ -81,11 +82,11 @@ export default function TrendChart({
   };
 
   return (
-    <figure className="mt-6 rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+    <figure className="mt-6 rounded-2xl border border-line bg-surface p-6">
       <figcaption>
-        <h2 className="text-xl font-bold text-white sm:text-2xl">{title}</h2>
+        <h2 className="text-xl font-bold text-ink sm:text-2xl">{title}</h2>
         {description && (
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-400">
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">
             {description}
           </p>
         )}
@@ -152,22 +153,22 @@ export default function TrendChart({
         </ResponsiveContainer>
       </div>
 
-      <details className="mt-4 text-sm text-zinc-400">
-        <summary className="cursor-pointer select-none transition hover:text-white">
+      <details className="mt-4 text-sm text-muted">
+        <summary className="cursor-pointer select-none transition hover:text-ink">
           Show data table
         </summary>
         <table className="mt-3 w-full max-w-sm text-left">
           <thead>
-            <tr className="border-b border-zinc-800 text-zinc-500">
+            <tr className="border-b border-line text-subtle">
               <th className="py-2 font-medium">Period</th>
               <th className="py-2 text-right font-medium">{valueLabel}</th>
             </tr>
           </thead>
           <tbody>
             {data.map((d) => (
-              <tr key={d.label} className="border-b border-zinc-800/60">
+              <tr key={d.label} className="border-b border-line/60">
                 <td className="py-2">{d.label}</td>
-                <td className="py-2 text-right tabular-nums text-zinc-200">
+                <td className="py-2 text-right tabular-nums text-ink-2">
                   {format(d.value)}
                 </td>
               </tr>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { sections } from "../data/sections";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [{ shortName: "Overview", href: "/" }, ...sections];
 
@@ -10,15 +11,18 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-black/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-page/85 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex h-14 items-center justify-between gap-4">
-          <Link href="/" className="text-lg font-bold tracking-tight text-white">
-            Tochhawng <span className="text-green-400">Data</span>
+          <Link href="/" className="text-lg font-bold tracking-tight text-ink">
+            Tochhawng <span className="text-accent">Data</span>
           </Link>
-          <p className="hidden text-sm text-zinc-500 sm:block">
-            Mizoram through numbers
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="hidden text-sm text-subtle sm:block">
+              Mizoram through numbers
+            </p>
+            <ThemeToggle />
+          </div>
         </div>
 
         <nav
@@ -38,8 +42,8 @@ export default function Navbar() {
                 aria-current={active ? "page" : undefined}
                 className={`whitespace-nowrap border-b-2 px-3 py-2.5 text-sm transition ${
                   active
-                    ? "border-green-400 text-white"
-                    : "border-transparent text-zinc-400 hover:text-white"
+                    ? "border-accent-solid text-ink"
+                    : "border-transparent text-muted hover:text-ink"
                 }`}
               >
                 {link.shortName}
