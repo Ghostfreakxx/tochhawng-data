@@ -1,153 +1,69 @@
+import Link from "next/link";
 import DataChart from "../components/DataChart";
+import DashboardCard from "../components/DashboardCard";
+import Sources from "../components/Sources";
 
 export default function EducationPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
-
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Education Dashboard
         </h1>
 
         <p className="text-gray-400 mb-10">
-          Literacy, schools, colleges, universities, and educational development indicators.
+          Literacy, schools, colleges, universities, and educational development
+          indicators.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Literacy Rate
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-  98.2%
-</p>
-
-<p className="text-gray-500 mt-2">
-  Recent reported literacy rate
-</p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Higher Education
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              MZU
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Mizoram University leads higher education in the state
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold">
-              Budget Allocation
-            </h2>
-
-            <p className="text-4xl font-bold mt-4 text-green-400">
-              ₹2,374 Cr
-            </p>
-
-            <p className="text-gray-500 mt-2">
-              Education, Sports, Arts and Culture sector
-            </p>
-          </div>
-
+          <DashboardCard
+            title="Literacy Rate"
+            value="98.2%"
+            note="India's first fully literate state, declared May 2025"
+          />
+          <DashboardCard
+            title="HSSLC 2026 (Class 12)"
+            value="87.67%"
+            note="10,734 of 12,243 candidates passed"
+          />
+          <DashboardCard
+            title="HSLC 2026 (Class 10)"
+            value="80.31%"
+            note="Mizoram Board of School Education pass rate"
+          />
         </div>
-<div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-  <h2 className="text-2xl font-bold mb-4">
-    HSSLC Examination Results
-  </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-    <div className="bg-black border border-zinc-800 rounded-xl p-5">
-      <h3 className="text-lg font-semibold">
-        Arts
-      </h3>
-
-      <p className="text-4xl font-bold mt-3 text-green-400">
-        80.37%
-      </p>
-
-      <p className="text-gray-500 mt-2">
-        HSSLC Arts Pass Percentage
-      </p>
-    </div>
-
-    <div className="bg-black border border-zinc-800 rounded-xl p-5">
-      <h3 className="text-lg font-semibold">
-        Science
-      </h3>
-
-      <p className="text-4xl font-bold mt-3 text-green-400">
-        81.67%
-      </p>
-
-      <p className="text-gray-500 mt-2">
-        HSSLC Science Pass Percentage
-      </p>
-    </div>
-
-    <div className="bg-black border border-zinc-800 rounded-xl p-5">
-      <h3 className="text-lg font-semibold">
-        Commerce
-      </h3>
-
-      <p className="text-4xl font-bold mt-3 text-green-400">
-        87.37%
-      </p>
-
-      <p className="text-gray-500 mt-2">
-        HSSLC Commerce Pass Percentage
-      Highest Overall Stream
-Commerce (87.37%)
-
-Best Performance Year
-2026
-
-Trend
-All streams improved between 2022–2026
-      </p>
-    </div>
-
-  </div>
-</div>
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Education Overview
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Education Overview</h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram has consistently maintained one of the highest literacy
-            rates in India. The education sector is supported by a wide network
-            of government and private schools, colleges, technical institutions,
-            and universities. Continued investment in education remains a key
-            component of the state's social development strategy.
+            On 20 May 2025 Mizoram became the first state to be declared fully
+            literate under the ULLAS programme, with a literacy rate of 98.2%
+            (PLFS 2023–24). The Ministry of Education treats 95% as the
+            threshold for full literacy. The 2026–27 budget allocates ₹2,283
+            crore to education, 13.7% of total expenditure and the largest
+            sector, including ₹584 crore for Samagra Shiksha.
           </p>
         </div>
 
         <DataChart
-  title="Literacy Growth (%)"
-  data={[
-    { year: "2001", value: 88.8 },
-    { year: "2011", value: 91.3 },
-    { year: "2024", value: 98.2 },
-  ]}
-/>
+          title="Literacy Rate (%)"
+          unit="%"
+          data={[
+            { year: "2001", value: 88.8 },
+            { year: "2011", value: 91.33 },
+            { year: "2023–24", value: 98.2 },
+          ]}
+          note="2001 and 2011: Census of India. 2023–24: PLFS, as used for the 2025 full-literacy declaration."
+        />
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Major Institutions
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Major Institutions</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
             <p>• Mizoram University (MZU)</p>
@@ -160,9 +76,7 @@ All streams improved between 2022–2026
         </div>
 
         <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h2 className="text-2xl font-bold mb-4">
-            Key Challenges
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Key Challenges</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
             <p>• Graduate unemployment</p>
@@ -174,11 +88,28 @@ All streams improved between 2022–2026
           </div>
         </div>
 
-        <p className="text-gray-600 text-sm mt-8">
-          Sources: Census of India, Mizoram Education Department,
-          Mizoram Budget Documents, UGC and institutional publications.
-        </p>
-
+        <Sources
+          updated="November 2026"
+          sources={[
+            {
+              label: "Ministry of Education (PIB) — Mizoram declared fully literate state",
+              url: "https://dsel.education.gov.in/sites/default/files/update/PIB2130080.pdf",
+            },
+            {
+              label: "Free Press Journal — MBSE HSSLC Result 2026: 87.67% pass",
+              url: "https://www.freepressjournal.in/education/mbse-hsslc-result-2026-declared-overall-pass-percentage-stands-at-8767",
+            },
+            {
+              label: "India Today NE — Mizoram board Class 10 results: 80.31% pass",
+              url: "https://www.indiatodayne.in/amp/mizoram/story/mizoram-board-declares-class-10-results-pass-percentage-rises-to-8031-1380211-2026-04-23",
+            },
+            { label: "Census of India 2001 and 2011" },
+            {
+              label: "PRS Legislative Research — Mizoram Budget Analysis 2026–27",
+              url: "https://prsindia.org/budgets/states/mizoram-budget-analysis-2026-27",
+            },
+          ]}
+        />
       </div>
     </main>
   );
