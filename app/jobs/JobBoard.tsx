@@ -130,8 +130,16 @@ function JobCard({
 }) {
   const left = today ? daysLeft(job.lastDate, today) : null;
 
+  const notYetOpen =
+    !closed && today !== null && !!job.publishedDate && job.publishedDate > today;
+
   let badge: { text: string; cls: string };
-  if (closed) {
+  if (notYetOpen) {
+    badge = {
+      text: `Opens ${formatDate(job.publishedDate!)}`,
+      cls: "bg-sky-950 text-sky-400",
+    };
+  } else if (closed) {
     badge = { text: "Closed", cls: "bg-zinc-800 text-gray-400" };
   } else if (left === null) {
     badge = { text: `Apply by ${formatDate(job.lastDate)}`, cls: "bg-green-950 text-green-400" };
