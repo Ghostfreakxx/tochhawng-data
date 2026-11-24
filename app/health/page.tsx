@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DashboardCard from "../components/DashboardCard";
 import HealthChart from "../components/HealthChart";
 
@@ -6,9 +7,9 @@ export default function HealthPage() {
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
 
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Health Dashboard
@@ -46,7 +47,7 @@ export default function HealthPage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-  Mizoram's healthcare system is supported by public hospitals,
+  Mizoram&apos;s healthcare system is supported by public hospitals,
   district health facilities, community health centres, and the
   Mizoram Universal Healthcare Scheme (MUHCS). Under MUHCS 2.0,
   a total of 49,278 families have enrolled and ₹22.74 crore has

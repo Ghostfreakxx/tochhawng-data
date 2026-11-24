@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DataChart from "../components/DataChart";
 
 export default function EducationPage() {
@@ -5,9 +6,9 @@ export default function EducationPage() {
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
 
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Education Dashboard
@@ -131,7 +132,7 @@ All streams improved between 2022–2026
             rates in India. The education sector is supported by a wide network
             of government and private schools, colleges, technical institutions,
             and universities. Continued investment in education remains a key
-            component of the state's social development strategy.
+            component of the state&apos;s social development strategy.
           </p>
         </div>
 

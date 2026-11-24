@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DataChart from "../components/DataChart";
 
 export default function CrimePage() {
@@ -5,9 +6,9 @@ export default function CrimePage() {
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
 
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Crime Dashboard
@@ -69,7 +70,7 @@ export default function CrimePage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-  Mizoram's public safety environment includes challenges related to
+  Mizoram&apos;s public safety environment includes challenges related to
   narcotics trafficking, cybercrime, cross-border smuggling, illegal
   arms movement, and public security. Between 2023 and 2025, the Home
   Department reported 517 drug cases, 573 arrests, illegal arms seizures,

@@ -1,11 +1,12 @@
+import Link from "next/link";
 export default function RuralPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
 
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Rural Development Dashboard

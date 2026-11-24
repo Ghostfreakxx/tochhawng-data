@@ -1,12 +1,13 @@
+import Link from "next/link";
 import DataChart from "../components/DataChart";
 
 export default function BudgetPage() {
   return (
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Budget Dashboard
@@ -110,7 +111,7 @@ export default function BudgetPage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram's budget prioritizes education, healthcare,
+            Mizoram&apos;s budget prioritizes education, healthcare,
             infrastructure, agriculture, rural development, and public
             administration. The state remains significantly dependent on
             transfers from the Union Government while gradually expanding

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DataChart from "../components/DataChart";
 
 export default function PopulationPage() {
@@ -5,9 +6,9 @@ export default function PopulationPage() {
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
 
-        <a href="/" className="text-gray-400 text-sm">
+        <Link href="/" className="text-gray-400 text-sm">
           ← Back to Overview
-        </a>
+        </Link>
 
         <h1 className="text-5xl font-bold mt-6 mb-4">
           Mizoram Population Dashboard
@@ -69,7 +70,7 @@ export default function PopulationPage() {
           </h2>
 
           <p className="text-gray-400 leading-7">
-            Mizoram is one of India's least populated states but has one of the
+            Mizoram is one of India&apos;s least populated states but has one of the
             highest literacy rates and urbanisation levels in the Northeast.
             Population growth has remained relatively moderate, while migration,
             education, and urban development continue to shape demographic trends.
