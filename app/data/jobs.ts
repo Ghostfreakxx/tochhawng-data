@@ -9,6 +9,10 @@
  * 3. `link` should point to the official notification or the page where it
  *    was published. Always check the official notice before adding a job.
  * 4. `id` just needs to be unique.
+ * 5. Private jobs usually have no closing date. Set `openUntilFilled: true`,
+ *    `publishedDate` to the day you saw the posting, and `lastDate` to 30 days
+ *    later. The card then shows "Open until filled" and the listing drops off
+ *    by itself after 30 days, so stale private postings don't pile up.
  *
  * Categories and sectors are free text, but reusing the existing values keeps
  * the filters tidy.
@@ -19,6 +23,7 @@ export type JobCategory =
   | "MPSC"
   | "Central Government"
   | "Public Sector"
+  | "Private Sector"
   | "Other";
 
 export type Job = {
@@ -31,8 +36,10 @@ export type Job = {
   location: string;
   /** "YYYY-MM-DD" — first day applications are accepted (optional). */
   publishedDate?: string;
-  /** "YYYY-MM-DD" — last date to apply. */
+  /** "YYYY-MM-DD" — last date to apply (for openUntilFilled jobs: when to stop showing it). */
   lastDate: string;
+  /** Posting has no closing date (typical for private jobs). */
+  openUntilFilled?: boolean;
   howToApply: string;
   /** Optional extra details shown on the card when given. */
   pay?: string;
@@ -155,6 +162,64 @@ export const jobs: Job[] = [
     link: "https://www.eximbankindia.in",
     linkLabel: "Official site (eximbankindia.in)",
     note: "Applications open 27 November 2026.",
+  },
+  {
+    id: "geovista-field-surveyor-2026-11",
+    title: "Field Surveyor",
+    department: "GeoVista Technologies Private Limited",
+    category: "Private Sector",
+    posts: null,
+    qualification: "Freshers and experienced candidates",
+    location: "Aizawl",
+    publishedDate: "2026-11-12",
+    lastDate: "2026-12-12",
+    openUntilFilled: true,
+    howToApply: "Apply through the Indeed listing",
+    pay: "From about ₹900 per day (fresher listing)",
+    link: "https://in.indeed.com/jobs-in-Aizawl,-Mizoram",
+    linkLabel: "Find it on Indeed (Aizawl jobs)",
+    note: "Full-time, permanent field role collecting, verifying and reporting survey data. Listings mention health and life insurance. Seen on Indeed on 12 November 2026.",
+  },
+  {
+    id: "tamz-group-bdm-aizawl-2026-11",
+    title: "Manager – Business Development",
+    department: "Tamz Group",
+    category: "Private Sector",
+    posts: null,
+    qualification: "Business development / sales experience",
+    location: "Aizawl & Lunglei",
+    publishedDate: "2026-11-12",
+    lastDate: "2026-12-12",
+    openUntilFilled: true,
+    howToApply: "Apply through the job board listing",
+    pay: "₹20,466–₹36,389 per month (employer-provided range on Glassdoor)",
+    link: "https://www.glassdoor.com/Job/mizoram-jobs-SRCH_IL.0,7_IS4958.htm",
+    linkLabel: "Find it on Glassdoor (Mizoram jobs)",
+    note: "Set up the company's commercial operations in Aizawl and Lunglei, reporting to the Head of North-East. Also listed on Indeed (12 November 2026).",
+  },
+];
+
+/** Places to search for private sector jobs in Mizoram. */
+export const privateJobSites = [
+  {
+    name: "Mizoram EmpEx — Employment Exchange",
+    url: "https://empex.mizoram.gov.in",
+    description: "The state's official online employment exchange (LESDE Department). Register and see placement listings.",
+  },
+  {
+    name: "National Career Service (NCS)",
+    url: "https://www.ncs.gov.in",
+    description: "Government portal with private-sector vacancies and job fairs across India, including the Northeast.",
+  },
+  {
+    name: "Indeed — Jobs in Aizawl",
+    url: "https://in.indeed.com/jobs-in-Aizawl,-Mizoram",
+    description: "Private jobs in Aizawl: sales, field work, accounting, healthcare and more. Updated daily.",
+  },
+  {
+    name: "Glassdoor — Jobs in Mizoram",
+    url: "https://www.glassdoor.com/Job/mizoram-jobs-SRCH_IL.0,7_IS4958.htm",
+    description: "Private jobs across Mizoram, often with salary ranges.",
   },
 ];
 
