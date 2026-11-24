@@ -1,18 +1,20 @@
+import Link from "next/link";
+
 const stats = [
   {
     title: "Population",
-    value: "12.5 Lakh",
-    note: "Estimated population of Mizoram",
+    value: "12.64 Lakh",
+    note: "Projected population, 2025",
   },
   {
     title: "Literacy Rate",
-    value: "91.3%",
-    note: "Among the highest in India",
+    value: "98.2%",
+    note: "India's first fully literate state (2025)",
   },
   {
     title: "State Budget",
-    value: "₹14,412 Cr",
-    note: "Budget Estimate 2024–25",
+    value: "₹17,077 Cr",
+    note: "Total expenditure, Budget 2026–27",
   },
   {
     title: "Capital",
@@ -25,18 +27,18 @@ const stats = [
     note: "Administrative districts",
   },
   {
-    title: "Focus",
-    value: "Governance",
-    note: "Data, development, and public policy",
+    title: "Infant Mortality",
+    value: "4",
+    note: "Per 1,000 live births, among India's lowest",
   },
-{
-  name: "Rural Development",
-  href: "/rural",
-  description: "MGNREGS, village infrastructure, livelihood, and rural development.",
-},
 ];
 
 const sections = [
+  {
+    name: "Jobs Portal",
+    href: "/jobs",
+    description: "Open government vacancies, last dates, and official recruitment sites.",
+  },
   {
     name: "Budget & Finance",
     href: "/budget",
@@ -73,6 +75,11 @@ const sections = [
     description: "Farming, crops, rural economy, and agricultural support.",
   },
   {
+    name: "Rural Development",
+    href: "/rural",
+    description: "Rural employment, village infrastructure, and livelihood.",
+  },
+  {
     name: "Elections",
     href: "/elections",
     description: "Democracy, participation, and electoral statistics.",
@@ -80,7 +87,7 @@ const sections = [
   {
     name: "Crime & Public Safety",
     href: "/crime",
-    description: "Crime trends, cybercrime, and public safety indicators.",
+    description: "Crime trends, drugs, cybercrime, and public safety indicators.",
   },
 ];
 
@@ -154,12 +161,12 @@ export default function Home() {
                 {section.description}
               </p>
 
-              <a
+              <Link
                 href={section.href}
                 className="text-green-400 text-sm hover:text-green-300"
               >
-                Open Dashboard →
-              </a>
+                {section.href === "/jobs" ? "Browse Jobs →" : "Open Dashboard →"}
+              </Link>
             </div>
           ))}
         </div>
@@ -182,9 +189,10 @@ export default function Home() {
       </section>
 
       <footer className="max-w-7xl mx-auto border-t border-zinc-800 pt-6 text-sm text-gray-500">
-        Sources include Mizoram Budget Documents, Census of India,
-        Election Commission of India, Government of Mizoram publications,
-        RBI reports, NCRB reports, Economic Survey reports, and departmental data.
+        Sources include Mizoram Budget Documents, PRS Legislative Research,
+        Census of India, Election Commission of India, NCRB, MoSPI, SRS, and
+        Government of Mizoram publications. Each dashboard lists its own
+        sources. Figures checked November 2026.
       </footer>
 
     </main>
