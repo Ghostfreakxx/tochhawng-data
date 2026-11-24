@@ -134,7 +134,9 @@ function JobCard({
     !closed && today !== null && !!job.publishedDate && job.publishedDate > today;
 
   let badge: { text: string; cls: string };
-  if (notYetOpen) {
+  if (job.openUntilFilled && !closed) {
+    badge = { text: "Open until filled", cls: "bg-sky-950 text-sky-400" };
+  } else if (notYetOpen) {
     badge = {
       text: `Opens ${formatDate(job.publishedDate!)}`,
       cls: "bg-sky-950 text-sky-400",
@@ -172,8 +174,14 @@ function JobCard({
         <dd>{job.location}</dd>
         <dt className="text-gray-500">Qualification</dt>
         <dd>{job.qualification}</dd>
-        <dt className="text-gray-500">Last date</dt>
-        <dd>{formatDate(job.lastDate)}</dd>
+        <dt className="text-gray-500">
+          {job.openUntilFilled ? "Listed" : "Last date"}
+        </dt>
+        <dd>
+          {job.openUntilFilled && job.publishedDate
+            ? `${formatDate(job.publishedDate)} (no closing date)`
+            : formatDate(job.lastDate)}
+        </dd>
         {job.pay && (
           <>
             <dt className="text-gray-500">Pay</dt>
