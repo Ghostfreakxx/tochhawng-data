@@ -166,6 +166,24 @@ function JobCard({
         <dd>{job.qualification}</dd>
         <dt className="text-gray-500">Last date</dt>
         <dd>{formatDate(job.lastDate)}</dd>
+        {job.pay && (
+          <>
+            <dt className="text-gray-500">Pay</dt>
+            <dd>{job.pay}</dd>
+          </>
+        )}
+        {job.ageLimit && (
+          <>
+            <dt className="text-gray-500">Age limit</dt>
+            <dd>{job.ageLimit}</dd>
+          </>
+        )}
+        {job.fee && (
+          <>
+            <dt className="text-gray-500">Fee</dt>
+            <dd>{job.fee}</dd>
+          </>
+        )}
         <dt className="text-gray-500">How to apply</dt>
         <dd>{job.howToApply}</dd>
       </dl>
